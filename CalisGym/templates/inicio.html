@@ -1,0 +1,33 @@
+{% extends 'padre.html' %}
+{% load static %}
+{% block contenidoQueCambia %}
+<header class="masthead">
+     <div class="container position-relative">
+         <div class="row justify-content-center">
+             <div class="col-xl-6">
+                 <div class="text-center text-black">
+                     <!-- Page heading-->
+                     <h1 class="mb-5" style="color: black;" > CalisGYM</h1>
+                     
+                         <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </header>
+    
+    {% if cursos %}        
+        <p>Estamos buscando el tipo de disciplina: {{tipo}}</p>
+        
+        <ul>
+            {% for tip in tipos %} 
+                 <li>{{tip.nombre}}</li>
+                 <li>{{tip.tipo}}</li>
+            {% endfor %}
+         </ul>
+     {% else %}
+         <p> No hay datos con ese tipo de disciplina</p>
+    {% endif %}
+    <p style="color: red;">{{respuesta}}</p>
+{% endblock %}

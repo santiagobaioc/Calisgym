@@ -1,0 +1,18 @@
+{% extends 'padre.html' %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+    {% if miFormulario.errors %}
+    <p style="color: red;"> Están mal los datos.</p>
+    {% endif %}
+    <p>Estamos buscando la disciplina tipo: {{tipo}}</p>
+    {% if disciplina %}
+        <ul>
+            {% for tip in tipos %} 
+                <li>{{tip.nombre}}</li>
+                <li>{{tip.tipo}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+{% endblock %}

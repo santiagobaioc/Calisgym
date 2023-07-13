@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+        
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-light bg-light static-top">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'Inicio' %}" style="font-weight: bold;"> Inicio</a>
+                <a class="navbar-brand" href="{% url 'Disciplinas' %}" style="font-weight:bold;"> Disciplinas </a>
+                <a class="navbar-brand" href="{% url 'Entrenadores' %}" style= "font-weight:bold;">Entrenadores</a>
+                <a class="navbar-brand" href="{% url 'Atletas' %}" style= "font-weight:bold;">Atletas</a>
+                <a class="navbar-brand" href="{% url 'Competencias' %}" style= "font-weight:bold;">Competencias</a>
+                <a class="btn btn-primary" href="#signup">Log in</a>
+            </div>
+        </nav>
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Profesores</title>
+</head>-->
+<br>
+<p style="color: black; font-weight:bold; size:24px"> Listado de entrenadores: </p>
+<br>
+<body>
+    <ul>
+        {% for e in entrenadores %}
+            <li>
+                {{p}}
+                <div class="botones">
+                    <button>
+                        <a href="{% url 'EliminarEntrenador' e.nombre %}">Eliminar</a>
+                    </button>
+                    <button>
+                        <a href="{% url 'EditarEntrenador' e.nombre %}">Editar</a>
+                    </button>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+    <br>
+    <br>
+
+    <a href="{%url 'Entrenadores' %}"> Agregar nuevo Entrenador.</a>
+</body>
+</html>
